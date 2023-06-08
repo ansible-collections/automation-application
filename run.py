@@ -5,6 +5,7 @@
 
 from importlib import resources
 
+import shlex
 import subprocess
 import os
 
@@ -12,7 +13,7 @@ import sys
 import yaml
 
 
-def _run_playbook(playbook_name: str):
+def _run_playbook(details: dict[str, str | list[str]]):
     """Run the ansible playbook for the given application.
 
     Parameters
@@ -20,11 +21,21 @@ def _run_playbook(playbook_name: str):
     app : str
     """
     # Note: validate the inputs against the input schema prior to running the playbook
-    command = f"ansible-playbook -i inventory.yaml {playbook_name} -e @vars.yaml"
+    playbook_name = details["name"]
+    add_args = details.get("args", [])
+    command = [
+        "ansible-playbook",
+        playbook_name,
+        "-i",
+        "inventory.yaml",
+        "-e",
+        "@vars.yaml",
+    ]
+    command.extend(add_args)
     env = os.environ.copy()
 
     env["ANSIBLE_COLLECTIONS_PATHS"] = "./collections"
-    subprocess.run(command, shell=True, check=False, env=env)
+    subprocess.run(args=shlex.join(command), shell=True, check=False, env=env)
 
 
 def main():
@@ -53,8 +64,7 @@ def main():
     exec_config = yaml.load(content, Loader=yaml.SafeLoader)
     for step, details in exec_config["execution"].items():
         if step == "ansible-playbook":
-            playbook = details["name"]
-            _run_playbook(playbook)
+            _run_playbook(details)
         if step == "shell":
             command = details["command"]
             subprocess.run(command, shell=True, check=True)
