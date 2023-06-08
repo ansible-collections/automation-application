@@ -1,6 +1,6 @@
-The application directory is a new root directory withing the collection structure. It will contain subdirectories, one for each auotmation application.
+The application directory is a new root directory withing the collection structure. It will contain subdirectories, one for each automation application.
 
-The directory should reflect the name of the automation application but should not be used to derive information about the automation application.
+The directory should reflect the name of the automation application for execution from the command line, the name in the description file should be used for UI pruposes.
 
 Files:
 
