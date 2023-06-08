@@ -4,9 +4,10 @@ The directory should reflect the name of the automation application for executio
 
 Files:
 
-- `description.xx-yy.yaml`: - Information related to the descirption of the automation application. - xx if the ISO 639 lanugage code - yy is the ISO 3166 country code
-- `input.json`: - The input data for the automation application formatted as a json schema (2020-12).
-- `output.json`: - The output data for the automation application formatted as a json schema (2020-12).
+- `description.xx-yy.yaml`: Information related to the descirption of the automation application. - xx if the ISO 639 lanugage code - yy is the ISO 3166 country code
+- `input.json`: The input data for the automation application formatted as a json schema (2020-12).
+- `output.json`: The output data for the automation application formatted as a json schema (2020-12).
+- `execution.yaml`: Information necessary to execute the automation application.
 
 Notes:
 
