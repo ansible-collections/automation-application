@@ -1,6 +1,14 @@
 - hosts: "{{ host_pattern }}"
   gather_facts: False
   tasks:
+    - name: Set the fact
+      ansible.builtin.set_fact:
+        output:
+          greeting: "Hello {{ first_name }} {{ last_name }}"
     - name: Greet the user
       ansible.builtin.debug:
-        msg: "Hello {{ first_name }} {{ last_name }}"
+        var: output.greeting
+    - name: Set the output
+      ansible.builtin.copy:
+        content: "{{ output|to_nice_yaml }}"
+        dest: "{{ lookup('env', 'PWD') }}/output.yaml"

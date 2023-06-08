@@ -1,5 +1,6 @@
 all:
   hosts:
     localhost:
+      ansible_connection: local
       first_name: John
       last_name: Doe
