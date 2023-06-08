@@ -8,6 +8,7 @@ Files:
 - `input.json`: The input data for the automation application formatted as a json schema (2020-12).
 - `output.json`: The output data for the automation application formatted as a json schema (2020-12).
 - `execution.yaml`: Information necessary to execute the automation application.
+- `icon-xx.yaml`: The icon for the automation application - xx the size (decide on size)
 
 Notes:
 
