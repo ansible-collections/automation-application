@@ -1,3 +1,5 @@
+#! python
+
 """Scrtch pad for running the application."""
 
 
@@ -47,14 +49,15 @@ def main():
         "r", encoding="utf-8"
     ) as fhand:
         content = fhand.read()
-    print(content)
 
     exec_config = yaml.load(content, Loader=yaml.SafeLoader)
     for step, details in exec_config["execution"].items():
         if step == "ansible-playbook":
             playbook = details["name"]
             _run_playbook(playbook)
-        print(step)
+        if step == "shell":
+            command = details["command"]
+            subprocess.run(command, shell=True, check=True)
 
 
 if __name__ == "__main__":

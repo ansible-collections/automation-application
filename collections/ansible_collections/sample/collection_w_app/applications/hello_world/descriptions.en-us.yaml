@@ -1,21 +1,25 @@
 language: en-us
 descriptions:
-  - short: Hello World
+  - name: Hello World
+    short: Hello World
     long:
       - An automation application that greets the user with a friendly name.
     tags:
       - general
-  - short: Hello security engineer
+  - name: Hello security engineer
+    short: Hello security engineer
     long:
       - An automation application that greets the security engineer with a friendly name.
     tags:
       - security
-  - short: Hello network engineer
+  - name: Hello network engineer
+    short: Hello network engineer
     long:
       - An automation application that greets the network engineer with a friendly name.
     tags:
       - network
-  - short: Hello cloud engineer
+  - name: Hello cloud engineer
+    short: Hello cloud engineer
     long:
       - An automation application that greets the cloud engineer with a friendly name.
     tags:

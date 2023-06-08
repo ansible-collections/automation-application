@@ -1,0 +1,12 @@
+{
+    "$id": "https://example.com/sample-output.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Outputs",
+    "type": "object",
+    "properties": {
+      "details": {
+        "type": "string",
+        "description": "The OS details"
+      }
+    }
+  }

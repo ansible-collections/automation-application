@@ -1,0 +1,8 @@
+language: en-us
+descriptions:
+  - name: My operating system
+    short: Inform the user of their operating system
+    long:
+      - An automation application that describes the OS.
+    tags:
+      - general

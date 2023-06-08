@@ -1,0 +1,4 @@
+---
+execution:
+  shell:
+    command: cat /etc/os-release
