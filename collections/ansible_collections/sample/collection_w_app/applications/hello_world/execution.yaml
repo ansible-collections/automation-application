@@ -1,0 +1,4 @@
+---
+execution:
+  ansible-playbook:
+    name: sample.collection_w_app.run
