@@ -1,4 +1,10 @@
 language: en-us
+required_host_groups:
+  h_group_1:
+    description: hosts play1 will happen on
+  h_group_2:
+    description: hosts play2 will happen on
+    
 descriptions:
   - name: Hello World
     short: Hello World
