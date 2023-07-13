@@ -1,4 +1,4 @@
-- hosts: "{{ host_pattern }}"
+- hosts: h_group_1
   gather_facts: False
   tasks:
     - name: Set the fact
