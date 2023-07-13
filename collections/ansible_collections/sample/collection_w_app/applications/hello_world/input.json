@@ -1,13 +1,16 @@
-{
+global:
+    foo:
+        type: str
+        required: true
+    bar:
+        type: int
+        required: true
+h_group_1: {
     "$id": "https://example.com/sample-input.schema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Details",
     "type": "object",
     "properties": {
-      "host_pattern": {
-        "type": "string",
-        "description": "The ansible host pattern."
-      },
       "first_name": {
         "type": "string",
         "description": "The person's first name."
